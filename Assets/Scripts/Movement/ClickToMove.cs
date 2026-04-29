@@ -104,7 +104,7 @@ public class ClickToMove : MonoBehaviour
 
     private bool InEnemyRange()
     {
-        if (Vector3.Distance(transform.position, SelectedEnemy.position) <= GameParameters.AttackRange) return true;
+        if (Vector3.Distance(transform.position, SelectedEnemy.position) <= GameParameters.PlayerAttackRange) return true;
         return false;
     }
 }

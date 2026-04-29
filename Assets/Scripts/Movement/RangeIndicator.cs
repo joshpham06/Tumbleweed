@@ -4,9 +4,9 @@ public class RangeIndicator : MonoBehaviour
 {
     public Transform Target;
 
-    public void Start()
+    public void Initialize(float attackRange)
     {
-        float diameter = GameParameters.AttackRange * 2f;
+        float diameter = attackRange * 2f;
         transform.localScale = new Vector3(diameter, diameter, 1f);
     }
     

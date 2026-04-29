@@ -37,7 +37,6 @@ public class Enemy : MonoBehaviour
 
     public void HighlightEnemy()
     {
-        
         Outline.enabled = true;
     }
     

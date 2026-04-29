@@ -20,7 +20,7 @@ public class AutoAttack : MonoBehaviour
         
         if (Timer <= 0f)
         {
-            Timer = GameParameters.AttackSpeed;
+            Timer = GameParameters.PlayerAttackSpeed;
             SpawnProjectile();
         }
     }
