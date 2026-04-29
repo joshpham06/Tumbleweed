@@ -16,4 +16,14 @@ public class HealthBar : MonoBehaviour
     {
         Fill.fillAmount = currentHealth / MaxHealth;
     }
+
+    public void Show()
+    {
+        
+    }
+    
+    public void Hide()
+    {
+        
+    }
 }

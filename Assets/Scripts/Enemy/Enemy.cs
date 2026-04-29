@@ -1,3 +1,4 @@
+using Pathfinding;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,7 +9,7 @@ public class Enemy : MonoBehaviour
     public int Damage;
     public float Speed;
     
-    private float MaxHealth = 100f;
+    private float MaxHealth = 40f;
     private float CurrentHealth;
     
     void Awake()
@@ -31,11 +32,14 @@ public class Enemy : MonoBehaviour
 
     private void KillEnemy()
     {
+        var enemyObj = new GraphUpdateObject(GetComponent<Collider>().bounds);
+        AstarPath.active.UpdateGraphs(enemyObj);
         Destroy(gameObject);
     }
 
     public void HighlightEnemy()
     {
+        
         Outline.enabled = true;
     }
     
