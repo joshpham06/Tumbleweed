@@ -6,17 +6,15 @@ using UnityEngine.InputSystem;
 public class ClickToMove : MonoBehaviour
 {
     public AutoAttack AutoAttack;
+    public AIDestinationSetter DestinationSetter;
 
     private float Timer;
     private bool IsHolding;
-    private AIDestinationSetter DestinationSetter;
     private Transform PlayerDestination;
     private Transform SelectedEnemy;
 
     void Awake()
     {
-        DestinationSetter = GetComponent<AIDestinationSetter>();
-
         PlayerDestination = new GameObject("MoveTarget").transform;
         DestinationSetter.target = PlayerDestination;
     }
@@ -76,8 +74,12 @@ public class ClickToMove : MonoBehaviour
 
         if (hit.collider.CompareTag("Enemy"))
         {
-            SelectedEnemy =  hit.collider.transform;
-            
+            if (SelectedEnemy != null)
+                SelectedEnemy.GetComponent<Enemy>().UnhighlightEnemy();
+
+            SelectedEnemy = hit.collider.transform;
+            SelectedEnemy.GetComponent<Enemy>().HighlightEnemy();
+
             if (!InEnemyRange())
                 PlayerDestination.position = SelectedEnemy.position;
             else
@@ -88,9 +90,14 @@ public class ClickToMove : MonoBehaviour
         }
         else
         {
+            if (SelectedEnemy != null)
+            {
+                SelectedEnemy.GetComponent<Enemy>().UnhighlightEnemy();
+                SelectedEnemy = null;
+            }
+
             PlayerDestination.position = hit.point;
             AutoAttack.ClearTarget();
-            SelectedEnemy = null;
         }
     }
 
