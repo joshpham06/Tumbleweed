@@ -7,6 +7,7 @@ public class ClickToMove : MonoBehaviour
 {
     public AutoAttack AutoAttack;
     public AIDestinationSetter DestinationSetter;
+    public AIPath AIPath;
 
     private float Timer;
     private bool IsHolding;
@@ -18,6 +19,7 @@ public class ClickToMove : MonoBehaviour
         PlayerDestination = new GameObject("MoveTarget").transform;
         PlayerDestination.position = transform.position;
         DestinationSetter.target = PlayerDestination;
+        AIPath.maxSpeed = GameParameters.PlayerSpeed;
     }
 
     void OnDestroy()

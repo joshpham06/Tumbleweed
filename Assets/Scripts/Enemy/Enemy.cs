@@ -5,11 +5,16 @@ public class Enemy : MonoBehaviour
 {
     public HealthBar HealthBar;
     public Outline Outline;
-    public RangeIndicator RangeIndicator;
+    public RangeIndicator AttackRangeIndicator;
+    public RangeIndicator DetectionRangeIndicator;
+    public Transform Target;
+    public AIDestinationSetter DestinationSetter;
+    public AIPath AIPath;
     
     public int Damage;
     public float AttackRange = 2f;
-    public float Speed;
+    public float DetectionRange = 5f;
+    public float Speed = 2.5f;
     
     private float MaxHealth = 40f;
     private float CurrentHealth;
@@ -19,8 +24,18 @@ public class Enemy : MonoBehaviour
         Outline.enabled = false;
         CurrentHealth = MaxHealth;
         HealthBar.Initialize(MaxHealth);
-        RangeIndicator.Initialize(AttackRange);
-        RangeIndicator.gameObject.SetActive(false);
+        AIPath.maxSpeed = Speed;
+        
+        InitializeIndicators();
+    }
+
+    void Update()
+    {
+        if (InRange())
+        {
+            print("set enemy target");
+            DestinationSetter.target = Target;
+        }
     }
 
     public void TakeDamage(float damage)
@@ -42,12 +57,28 @@ public class Enemy : MonoBehaviour
     public void HighlightEnemy()
     {
         Outline.enabled = true;
-        RangeIndicator.gameObject.SetActive(true);
+        //AttackRangeIndicator.gameObject.SetActive(true);
+        //DetectionRangeIndicator.gameObject.SetActive(true);
     }
     
     public void UnhighlightEnemy()
     {
         Outline.enabled = false;
-        RangeIndicator.gameObject.SetActive(false);
+        //AttackRangeIndicator.gameObject.SetActive(false);
+        //DetectionRangeIndicator.gameObject.SetActive(false);
+    }
+    
+    private bool InRange()
+    {
+        if (Vector3.Distance(transform.position, Target.position) <= DetectionRange) return true;
+        return false;
+    }
+
+    private void InitializeIndicators()
+    {
+        AttackRangeIndicator.Initialize(AttackRange);
+        DetectionRangeIndicator.Initialize(DetectionRange);
+        AttackRangeIndicator.gameObject.SetActive(true);
+        DetectionRangeIndicator.gameObject.SetActive(true);
     }
 }
