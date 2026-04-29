@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public RangeIndicator RangeIndicator;
     
     public int Damage;
-    public float AttackRange = 3f;
+    public float AttackRange = 2f;
     public float Speed;
     
     private float MaxHealth = 40f;
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
         CurrentHealth = MaxHealth;
         HealthBar.Initialize(MaxHealth);
         RangeIndicator.Initialize(AttackRange);
-        RangeIndicator.gameObject.SetActive(true);
+        RangeIndicator.gameObject.SetActive(false);
     }
 
     public void TakeDamage(float damage)

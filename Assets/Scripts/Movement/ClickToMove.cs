@@ -16,6 +16,7 @@ public class ClickToMove : MonoBehaviour
     void Awake()
     {
         PlayerDestination = new GameObject("MoveTarget").transform;
+        PlayerDestination.position = transform.position;
         DestinationSetter.target = PlayerDestination;
     }
 

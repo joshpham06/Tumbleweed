@@ -12,6 +12,6 @@ public class RangeIndicator : MonoBehaviour
     
     void LateUpdate()
     {
-        transform.position = new Vector3(Target.position.x, 0.01f, Target.position.z);
+        transform.position = new Vector3(Target.position.x, transform.position.y, Target.position.z);
     }
 }
