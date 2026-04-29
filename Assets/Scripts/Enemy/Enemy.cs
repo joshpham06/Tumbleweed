@@ -32,8 +32,6 @@ public class Enemy : MonoBehaviour
 
     private void KillEnemy()
     {
-        var enemyObj = new GraphUpdateObject(GetComponent<Collider>().bounds);
-        AstarPath.active.UpdateGraphs(enemyObj);
         Destroy(gameObject);
     }
 
