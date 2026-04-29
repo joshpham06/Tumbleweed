@@ -74,7 +74,6 @@ public class ClickToMove : MonoBehaviour
 
         if (hit.collider.CompareTag("Enemy"))
         {
-            print("hit enemy");
             if (SelectedEnemy != null)
                 SelectedEnemy.GetComponent<Enemy>().UnhighlightEnemy();
 

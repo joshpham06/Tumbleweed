@@ -5,8 +5,10 @@ public class Enemy : MonoBehaviour
 {
     public HealthBar HealthBar;
     public Outline Outline;
+    public RangeIndicator RangeIndicator;
     
     public int Damage;
+    public float AttackRange = 3f;
     public float Speed;
     
     private float MaxHealth = 40f;
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour
         Outline.enabled = false;
         CurrentHealth = MaxHealth;
         HealthBar.Initialize(MaxHealth);
+        RangeIndicator.Initialize(AttackRange);
+        RangeIndicator.gameObject.SetActive(true);
     }
 
     public void TakeDamage(float damage)
@@ -32,16 +36,18 @@ public class Enemy : MonoBehaviour
 
     private void KillEnemy()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     public void HighlightEnemy()
     {
         Outline.enabled = true;
+        RangeIndicator.gameObject.SetActive(true);
     }
     
     public void UnhighlightEnemy()
     {
         Outline.enabled = false;
+        RangeIndicator.gameObject.SetActive(false);
     }
 }

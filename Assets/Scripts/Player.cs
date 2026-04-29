@@ -3,10 +3,10 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour 
 {
+	public RangeIndicator RangeIndicator;
 	
 	void Awake()
 	{
-		RangeIndicator rangeIndicator = GetComponent<RangeIndicator>();
-		rangeIndicator.Initialize(GameParameters.PlayerAttackRange);
+		RangeIndicator.Initialize(GameParameters.PlayerAttackRange);
 	}
 }
