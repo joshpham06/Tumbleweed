@@ -33,7 +33,6 @@ public class Enemy : MonoBehaviour
     {
         if (InRange())
         {
-            print("set enemy target");
             DestinationSetter.target = Target;
         }
     }
