@@ -2,13 +2,38 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public GameObject EnemyPrefab;
+    public HealthBar HealthBar;
+    
     public int Damage;
     public float Speed;
-    public float Health;
+    
+    private float MaxHealth = 100f;
+    private float CurrentHealth;
+
+    void Awake()
+    {
+        CurrentHealth = MaxHealth;
+        HealthBar.Initialize(MaxHealth);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        CurrentHealth -= damage;
+        HealthBar.SetHealth(CurrentHealth);
+
+        if (CurrentHealth <= 0)
+        {
+            KillEnemy();
+        }
+    }
+
+    private void KillEnemy()
+    {
+        Destroy(gameObject);
+    }
 
     public void HighlightEnemy()
     {
-        //highlight enemy (cell shading? or just change color)
+        //highlight enemy when selected (cell shading? or just change color)
     }
 }

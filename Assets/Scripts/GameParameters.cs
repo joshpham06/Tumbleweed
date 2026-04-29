@@ -8,7 +8,7 @@ public static class GameParameters
     // Player
     public static float PlayerSpeed = 5f;
     public static float AttackRange = 6f;
-    public static float AttackSpeed = 2f;
+    public static float AttackSpeed = 1f;
     
     // Projectiles
     public static float ProjectileDamage = 5f;

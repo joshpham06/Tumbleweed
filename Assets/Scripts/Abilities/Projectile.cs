@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
         Collider[] hits = Physics.OverlapSphere(transform.position, Radius, EnemyLayer);
         if (hits.Length > 0)
         {
+            hits[0].GetComponent<Enemy>()?.TakeDamage(GameParameters.ProjectileDamage);
             Destroy(gameObject);
         }
     }
