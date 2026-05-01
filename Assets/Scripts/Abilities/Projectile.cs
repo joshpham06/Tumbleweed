@@ -15,22 +15,22 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        Vector3 direction = Target != null
-            ? (Target.position - transform.position).normalized
-            : transform.forward;
-
-        if (Target != null)
+        if (Target == null)
         {
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, RotateSpeed * Time.deltaTime);
+            Destroy(gameObject);
+            return;
         }
+
+        Vector3 direction = (Target.position - transform.position).normalized;
+
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, RotateSpeed * Time.deltaTime);
 
         transform.position += transform.forward * GameParameters.ProjectileSpeed * Time.deltaTime;
 
-        Collider[] hits = Physics.OverlapSphere(transform.position, Radius, EnemyLayer);
-        if (hits.Length > 0)
+        if (Vector3.Distance(transform.position, Target.position) <= Radius)
         {
-            hits[0].GetComponent<Enemy>()?.TakeDamage(GameParameters.ProjectileDamage);
+            Target.GetComponentInParent<Enemy>().TakeDamage(GameParameters.ProjectileDamage);
             Destroy(gameObject);
         }
     }
