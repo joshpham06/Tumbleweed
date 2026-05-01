@@ -6,6 +6,7 @@ public class AutoAttack : MonoBehaviour
 
     private Transform Target;
     private float Timer;
+    private float AttackSpeed;
 
     void Awake()
     {
@@ -20,9 +21,14 @@ public class AutoAttack : MonoBehaviour
         
         if (Timer <= 0f)
         {
-            Timer = GameParameters.PlayerAttackSpeed;
+            Timer = AttackSpeed;
             SpawnProjectile();
         }
+    }
+
+    public void SetAttackSpeed(float attackSpeed)
+    {
+        AttackSpeed = attackSpeed;
     }
 
     public void SetTarget(Transform target)
@@ -36,6 +42,7 @@ public class AutoAttack : MonoBehaviour
         Target = null;
     }
 
+    // maybe have a parameter to select whether the projectile is seeking or not
     private void SpawnProjectile()
     {
         if (Target == null) return;

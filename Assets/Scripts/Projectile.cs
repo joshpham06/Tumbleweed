@@ -4,7 +4,6 @@ public class Projectile : MonoBehaviour
 {
     public float RotateSpeed = 200f;
     public float Radius = 0.2f;
-    public LayerMask EnemyLayer;
 
     private Transform Target;
 
@@ -30,7 +29,7 @@ public class Projectile : MonoBehaviour
 
         if (Vector3.Distance(transform.position, Target.position) <= Radius)
         {
-            Target.GetComponentInParent<Enemy>().TakeDamage(GameParameters.ProjectileDamage);
+            Target.GetComponentInParent<IsDamageable>().TakeDamage(GameParameters.ProjectileDamage);
             Destroy(gameObject);
         }
     }
