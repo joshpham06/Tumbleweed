@@ -1,22 +1,25 @@
 using Pathfinding;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IsDamageable
 {
-    public HealthBar HealthBar;
-    public Outline Outline;
-    public RangeIndicator AttackRangeIndicator;
-    public RangeIndicator DetectionRangeIndicator;
     public Transform Target;
     public AIDestinationSetter DestinationSetter;
     public AIPath AIPath;
+    public Outline Outline;
+    
+    public HealthBar HealthBar;
+    public RangeIndicator AttackRangeIndicator;
+    public RangeIndicator DetectionRangeIndicator;
+    public AutoAttack AutoAttack;
     
     public int Damage;
     public float AttackRange = 2f;
-    public float DetectionRange = 5f;
-    public float Speed = 2.5f;
+    public float AttackSpeed = 1f;
+    public float Speed = 2.5f; 
+    public float MaxHealth = 20f;
     
-    private float MaxHealth = 40f;
+    private float DetectionRange = GameParameters.PlayerAttackRange;
     private float CurrentHealth;
     
     void Awake()
@@ -25,16 +28,19 @@ public class Enemy : MonoBehaviour
         CurrentHealth = MaxHealth;
         HealthBar.Initialize(MaxHealth);
         AIPath.maxSpeed = Speed;
+        AutoAttack.SetAttackSpeed(AttackSpeed);
         
         InitializeIndicators();
     }
 
     void Update()
     {
-        if (InRange())
-        {
+        if (InDetectionRange())
             DestinationSetter.target = Target;
-        }
+        if (InAttackRange())
+            AutoAttack.SetTarget(Target);
+        else if (!InAttackRange())
+            AutoAttack.ClearTarget();
     }
 
     public void TakeDamage(float damage)
@@ -48,6 +54,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    // might not need separate method doing nothing else when the enemy is killed
     private void KillEnemy()
     {
         Destroy(transform.parent.gameObject);
@@ -67,9 +74,15 @@ public class Enemy : MonoBehaviour
         //DetectionRangeIndicator.gameObject.SetActive(false);
     }
     
-    private bool InRange()
+    private bool InDetectionRange()
     {
         if (Vector3.Distance(transform.position, Target.position) <= DetectionRange) return true;
+        return false;
+    }
+    
+    private bool InAttackRange()
+    {
+        if (Vector3.Distance(transform.position, Target.position) <= AttackRange) return true;
         return false;
     }
 

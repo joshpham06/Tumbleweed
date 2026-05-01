@@ -20,6 +20,7 @@ public class ClickToMove : MonoBehaviour
         PlayerDestination.position = transform.position;
         DestinationSetter.target = PlayerDestination;
         AIPath.maxSpeed = GameParameters.PlayerSpeed;
+        AutoAttack.SetAttackSpeed(GameParameters.PlayerAttackSpeed);
     }
 
     void OnDestroy()
