@@ -34,7 +34,6 @@ public class Player : MonoBehaviour, IsDamageable
 	{
 		CurrentHealth -= damage;
 		HealthBar.SetHealth(CurrentHealth);
-		print("Player health: " +  CurrentHealth);
 
 		if (CurrentHealth <= 0)
 		{
