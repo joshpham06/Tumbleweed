@@ -42,7 +42,6 @@ public class AutoAttack : MonoBehaviour
         Target = null;
     }
 
-    // maybe have a parameter to select whether the projectile is seeking or not
     private void SpawnProjectile()
     {
         if (Target == null) return;
