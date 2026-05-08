@@ -14,13 +14,32 @@ public class GameController : MonoBehaviour
     };
     private GameView gameView;
     private GameStates gameState;
+    
     private int maxCollectiblesCount;
+    private int maxEnemiesCount;
+    private int CollectiblesCount;
+    private int KillCount;
 
+    void Awake()
+    {
+        maxCollectiblesCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
+        maxEnemiesCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+    }
+    
     private void Start()
     {
         gameView = GetComponentInChildren<GameView>();
         gameState = GameStates.GamePlaying;
-        maxCollectiblesCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
+    }
+
+    void OnEnable()
+    {
+        Enemy.OnEnemyKilled += HandleEnemyKilled;
+    }
+
+    void OnDisable()
+    {
+        Enemy.OnEnemyKilled -= HandleEnemyKilled;
     }
     
     private void OnGameWon()
@@ -29,7 +48,8 @@ public class GameController : MonoBehaviour
         // Set the text value of our result text
         gameView.resultText.text = "You Win!";
         //Hide count and timer text
-        gameView.countText.gameObject.SetActive(false);
+        gameView.CollectiblesCountText.gameObject.SetActive(false);
+        gameView.EnemiesCountText.gameObject.SetActive(false);
         gameView.timerText.gameObject.SetActive(false);
         //Play win sfx
         AudioManager.Instance.PlayWinSFX();
@@ -43,7 +63,8 @@ public class GameController : MonoBehaviour
         // Set the text value of our result text
         gameView.resultText.text = "You Lose.";
         //Hide count and timer text
-        gameView.countText.gameObject.SetActive(false);
+        gameView.CollectiblesCountText.gameObject.SetActive(false);
+        gameView.EnemiesCountText.gameObject.SetActive(false);
         gameView.timerText.gameObject.SetActive(false);
         //Play lose sfx
         AudioManager.Instance.PlayLoseSFX();
@@ -74,21 +95,45 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void OnPickUpCollectible(int playerCollectibleCount)
+    public void OnPickUpCollectible()
     {
         //Play collect sound
         AudioManager.Instance.PlayCollectSFX();
         //Set ui text counter
-        gameView.SetCountText(playerCollectibleCount);
-        // Check if our 'count' is equal to or exceeded our maxCollectibles count
-        if (playerCollectibleCount >= maxCollectiblesCount) 
-        {
-            StateUpdate(GameStates.GameWon);
-        }
+        CollectiblesCount++;
+        gameView.SetCollectiblesCountText(CollectiblesCount);
+        CheckGameWin();
+    }
+    
+    public void HandleEnemyKilled()
+    {
+        //Play kill sound
+        //AudioManager.Instance.PlayCollectSFX();
+        KillCount++;
+        gameView.SetEnemiesCountText(KillCount);
+        CheckGameWin();
     }
 
     public void UpdateGameTimer(int timerCount)
     {
         gameView.SetTimerText(timerCount);
+    }
+
+    public int GetMaxCollectiblesCount()
+    {
+        return maxCollectiblesCount;
+    }
+    
+    public int GetMaxEnemiesCount()
+    {
+        return maxEnemiesCount;
+    }
+
+    private void CheckGameWin()
+    {
+        if (CollectiblesCount >= maxCollectiblesCount && KillCount >= maxEnemiesCount) 
+        {
+            StateUpdate(GameStates.GameWon);
+        }
     }
 }

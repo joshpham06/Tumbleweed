@@ -1,3 +1,4 @@
+using System;
 using Pathfinding;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ public class Enemy : MonoBehaviour, IsDamageable
     
     private float DetectionRange = GameParameters.PlayerAttackRange;
     private float CurrentHealth;
+    
+    public static event Action OnEnemyKilled;
     
     void Awake()
     {
@@ -55,9 +58,10 @@ public class Enemy : MonoBehaviour, IsDamageable
             KillEnemy();
         }
     }
-
+    
     private void KillEnemy()
     {
+        OnEnemyKilled?.Invoke();
         Destroy(transform.parent.gameObject);
     }
 

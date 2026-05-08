@@ -7,7 +7,6 @@ public class Player : MonoBehaviour, IsDamageable
 	public HealthBar HealthBar;
 	
 	private GameController GameController;
-	private int CollectibleCount;
 	private float CurrentHealth;
 	
 	void Awake()
@@ -16,7 +15,6 @@ public class Player : MonoBehaviour, IsDamageable
 		RangeIndicator.Initialize(GameParameters.PlayerAttackRange);
 		HealthBar.Initialize(GameParameters.PlayerMaxHealth);
 		
-		CollectibleCount = 0;
 		CurrentHealth = GameParameters.PlayerMaxHealth;
 	}
 	
@@ -25,8 +23,7 @@ public class Player : MonoBehaviour, IsDamageable
 		if (other.gameObject.CompareTag ("Pick Up"))
 		{
 			other.gameObject.SetActive(false);
-			CollectibleCount = CollectibleCount + 1;
-			GameController.OnPickUpCollectible(CollectibleCount);
+			GameController.OnPickUpCollectible();
 		}
 	}
 	

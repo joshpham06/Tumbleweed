@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Synty/PolygonWestern/Materials/Alts/PolygonWestern_01_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Synty/PolygonWestern/Materials/Alts/PolygonWestern_01_A.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +145,7 @@
       <workItem from="1776891647590" duration="3464000" />
       <workItem from="1776895454662" duration="21428000" />
       <workItem from="1777906798242" duration="12422000" />
-      <workItem from="1778060508662" duration="14204000" />
+      <workItem from="1778060508662" duration="17121000" />
     </task>
     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
       <option name="closed" value="true" />
@@ -257,7 +259,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778225905768</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Burst model">
+      <option name="closed" value="true" />
+      <created>1778226512808</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1778226512808</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed enemy AutoAttack reference">
+      <option name="closed" value="true" />
+      <created>1778226679392</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1778226679392</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +323,9 @@
     <MESSAGE value="Burst ability fixes" />
     <MESSAGE value="Added player projectile model" />
     <MESSAGE value="Removed projectile wiggle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed projectile wiggle" />
+    <MESSAGE value="Burst model" />
+    <MESSAGE value="Fixed enemy AutoAttack reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed enemy AutoAttack reference" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
