@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour, IsDamageable
     public RangeIndicator DetectionRangeIndicator;
     public AutoAttack AutoAttack;
     
-    public float AttackDamage;
+    public float AttackDamage = 5;
     public float AttackRange = 2f;
     public float AttackSpeed = 1f;
     public float Speed = 2.5f; 
