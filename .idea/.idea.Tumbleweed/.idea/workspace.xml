@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameParameters.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameParameters.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Abilities/Burst.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Abilities/Burst.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AimIndicator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AimIndicator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MousePosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MousePosition.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,12 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IsDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement/RangeIndicator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Abilities.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/AimIndicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/Assets/Scripts/Player/AimIndicator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7327e77c1cc2/Runtime/UniversalRendererData.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -147,7 +146,7 @@
       <workItem from="1776891647590" duration="3464000" />
       <workItem from="1776895454662" duration="21428000" />
       <workItem from="1777906798242" duration="12422000" />
-      <workItem from="1778060508662" duration="11900000" />
+      <workItem from="1778060508662" duration="13300000" />
     </task>
     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
       <option name="closed" value="true" />
@@ -237,7 +236,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778221139182</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Burst ability fixes">
+      <option name="closed" value="true" />
+      <created>1778224330997</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778224330997</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +289,8 @@
     <MESSAGE value="Built Level" />
     <MESSAGE value="Health bar positioning" />
     <MESSAGE value="Fixed enemy damage and stopping distance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed enemy damage and stopping distance" />
+    <MESSAGE value="Burst ability fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Burst ability fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

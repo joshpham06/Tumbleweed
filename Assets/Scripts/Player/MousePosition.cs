@@ -3,6 +3,7 @@ using UnityEngine;
 public class MousePosition : MonoBehaviour
 {
     public static Vector3 WorldPosition;
+    public LayerMask GroundLayer;
 
     private Camera Camera;
 
@@ -14,7 +15,7 @@ public class MousePosition : MonoBehaviour
     void Update()
     {
         Ray ray = Camera.ScreenPointToRay(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, GroundLayer))
             WorldPosition = hit.point;
     }
 

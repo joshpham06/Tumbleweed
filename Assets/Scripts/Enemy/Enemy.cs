@@ -46,6 +46,7 @@ public class Enemy : MonoBehaviour, IsDamageable
 
     public void TakeDamage(float damage)
     {
+        DestinationSetter.target = Target;
         CurrentHealth -= damage;
         HealthBar.SetHealth(CurrentHealth);
 

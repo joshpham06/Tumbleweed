@@ -15,11 +15,12 @@ public static class GameParameters
     //Burst
     public static float BurstDamage = 10f;
     public static float BurstCooldown = 3f;
+    public static float BurstProjectileSpeed = 6.5f;
     
     // Split
     public static int SplitAmount = 4;
     public static float SplitCooldown = 10f;
     
     // Projectiles
-    public static float ProjectileSpeed = 8f;
+    public static float ProjectileSpeed = 10f;
 }

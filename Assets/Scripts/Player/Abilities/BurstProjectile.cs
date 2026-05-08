@@ -4,7 +4,7 @@ public class BurstProjectile : MonoBehaviour
 {
     void Update()
     {
-        transform.position += transform.forward * GameParameters.ProjectileSpeed * Time.deltaTime;
+        transform.position += transform.forward * GameParameters.BurstProjectileSpeed * Time.deltaTime;
     }
 
     void OnTriggerEnter(Collider other)

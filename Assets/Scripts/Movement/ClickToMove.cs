@@ -8,6 +8,8 @@ public class ClickToMove : MonoBehaviour
     public AutoAttack AutoAttack;
     public AIDestinationSetter DestinationSetter;
     public AIPath AIPath;
+    public LayerMask GroundLayer;
+    public LayerMask EnemyLayer;
 
     private float Timer;
     private bool IsHolding;
@@ -76,7 +78,7 @@ public class ClickToMove : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, 100f)) return;
+        if (!Physics.Raycast(ray, out RaycastHit hit, 100f, GroundLayer | EnemyLayer)) return;
 
         if (hit.collider.CompareTag("Enemy"))
         {
