@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="" />
+    <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +37,8 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/Assets/Prefabs/Enemy.prefab" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prefabs/EnemyProjectile.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IsDamageable.cs" root0="FORCE_HIGHLIGHTING" />
@@ -138,7 +145,7 @@
       <workItem from="1776891647590" duration="3464000" />
       <workItem from="1776895454662" duration="21428000" />
       <workItem from="1777906798242" duration="12422000" />
-      <workItem from="1778060508662" duration="20440000" />
+      <workItem from="1778060508662" duration="22736000" />
     </task>
     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
       <option name="closed" value="true" />
@@ -292,7 +299,31 @@
       <option name="project" value="LOCAL" />
       <updated>1778232703341</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="More collectibles">
+      <option name="closed" value="true" />
+      <created>1778232923120</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1778232923120</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Time text sizing">
+      <option name="closed" value="true" />
+      <created>1778233133021</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1778233133021</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Enemy balancing">
+      <option name="closed" value="true" />
+      <created>1778233146272</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1778233146272</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +376,10 @@
     <MESSAGE value="Changed count text for collectibles and enemies" />
     <MESSAGE value="Added interchangeable keyboard and mouse movement" />
     <MESSAGE value="Health bar outlines" />
-    <option name="LAST_COMMIT_MESSAGE" value="Health bar outlines" />
+    <MESSAGE value="More collectibles" />
+    <MESSAGE value="Time text sizing" />
+    <MESSAGE value="Enemy balancing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy balancing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
