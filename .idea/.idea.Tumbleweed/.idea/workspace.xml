@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Synty/PolygonGeneric/Shaders/Generic_Basic.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="LevelBuilding" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,7 +37,17 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement/RangeIndicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/Assets/Prefabs/Enemy.prefab" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/EnemyProjectile.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IsDamageable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Abilities.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/AimIndicator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/Assets/Scripts/Player/AimIndicator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Movement/KeyboardToMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7327e77c1cc2/Runtime/UniversalRendererData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Temp/Compiled-Standard.shader" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -52,7 +67,8 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Abilities&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -128,6 +144,8 @@
       <updated>1776891645955</updated>
       <workItem from="1776891647590" duration="3464000" />
       <workItem from="1776895454662" duration="21428000" />
+      <workItem from="1777906798242" duration="12422000" />
+      <workItem from="1778060508662" duration="22736000" />
     </task>
     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
       <option name="closed" value="true" />
@@ -145,7 +163,167 @@
       <option name="project" value="LOCAL" />
       <updated>1777449876855</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Enemy prefab">
+      <option name="closed" value="true" />
+      <created>1777498761152</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777498761152</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Projectiles are now unique to the targeted enemy">
+      <option name="closed" value="true" />
+      <created>1777617395108</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777617395108</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Player can take damage">
+      <option name="closed" value="true" />
+      <created>1777620071346</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777620071346</updated>
+    </task>
+    <task id="LOCAL-00006" summary="File structure changes">
+      <option name="closed" value="true" />
+      <created>1777620087329</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777620087329</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Enemy Balancing">
+      <option name="closed" value="true" />
+      <created>1777657196932</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1777657196933</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created burst script">
+      <option name="closed" value="true" />
+      <created>1777908105131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1777908105131</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Built Level">
+      <option name="closed" value="true" />
+      <created>1778219889935</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1778219889935</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Health bar positioning">
+      <option name="closed" value="true" />
+      <created>1778220335485</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1778220335485</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed enemy damage and stopping distance">
+      <option name="closed" value="true" />
+      <created>1778221139181</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1778221139182</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Burst ability fixes">
+      <option name="closed" value="true" />
+      <created>1778224330997</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1778224330997</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added player projectile model">
+      <option name="closed" value="true" />
+      <created>1778225796040</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1778225796040</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removed projectile wiggle">
+      <option name="closed" value="true" />
+      <created>1778225905768</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778225905768</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Burst model">
+      <option name="closed" value="true" />
+      <created>1778226512808</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1778226512808</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fixed enemy AutoAttack reference">
+      <option name="closed" value="true" />
+      <created>1778226679392</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1778226679392</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Changed count text for collectibles and enemies">
+      <option name="closed" value="true" />
+      <created>1778229548894</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1778229548894</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added interchangeable keyboard and mouse movement">
+      <option name="closed" value="true" />
+      <created>1778232419276</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1778232419276</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Health bar outlines">
+      <option name="closed" value="true" />
+      <created>1778232703341</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1778232703341</updated>
+    </task>
+    <task id="LOCAL-00020" summary="More collectibles">
+      <option name="closed" value="true" />
+      <created>1778232923120</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1778232923120</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Time text sizing">
+      <option name="closed" value="true" />
+      <created>1778233133021</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1778233133021</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Enemy balancing">
+      <option name="closed" value="true" />
+      <created>1778233146272</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1778233146272</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +358,28 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Enemy healthbar and damage." />
     <MESSAGE value="Quick Outline and enemy scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quick Outline and enemy scripts" />
+    <MESSAGE value="Enemy prefab" />
+    <MESSAGE value="Projectiles are now unique to the targeted enemy" />
+    <MESSAGE value="Player can take damage" />
+    <MESSAGE value="File structure changes" />
+    <MESSAGE value="Enemy Balancing" />
+    <MESSAGE value="Created burst script" />
+    <MESSAGE value="Polygon western package and univeral pipeline added" />
+    <MESSAGE value="Built Level" />
+    <MESSAGE value="Health bar positioning" />
+    <MESSAGE value="Fixed enemy damage and stopping distance" />
+    <MESSAGE value="Burst ability fixes" />
+    <MESSAGE value="Added player projectile model" />
+    <MESSAGE value="Removed projectile wiggle" />
+    <MESSAGE value="Burst model" />
+    <MESSAGE value="Fixed enemy AutoAttack reference" />
+    <MESSAGE value="Changed count text for collectibles and enemies" />
+    <MESSAGE value="Added interchangeable keyboard and mouse movement" />
+    <MESSAGE value="Health bar outlines" />
+    <MESSAGE value="More collectibles" />
+    <MESSAGE value="Time text sizing" />
+    <MESSAGE value="Enemy balancing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enemy balancing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,23 +1,29 @@
+using System;
 using Pathfinding;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IsDamageable
 {
-    public HealthBar HealthBar;
-    public Outline Outline;
-    public RangeIndicator AttackRangeIndicator;
-    public RangeIndicator DetectionRangeIndicator;
     public Transform Target;
     public AIDestinationSetter DestinationSetter;
     public AIPath AIPath;
+    public Outline Outline;
     
-    public int Damage;
+    public HealthBar HealthBar;
+    public RangeIndicator AttackRangeIndicator;
+    public RangeIndicator DetectionRangeIndicator;
+    public AutoAttack AutoAttack;
+    
+    public float AttackDamage = 5;
     public float AttackRange = 2f;
-    public float DetectionRange = 5f;
-    public float Speed = 2.5f;
+    public float AttackSpeed = 1f;
+    public float Speed = 2.5f; 
+    public float MaxHealth = 20f;
     
-    private float MaxHealth = 40f;
+    private float DetectionRange = GameParameters.PlayerAttackRange;
     private float CurrentHealth;
+    
+    public static event Action OnEnemyKilled;
     
     void Awake()
     {
@@ -25,20 +31,25 @@ public class Enemy : MonoBehaviour
         CurrentHealth = MaxHealth;
         HealthBar.Initialize(MaxHealth);
         AIPath.maxSpeed = Speed;
+        AutoAttack.SetAttackSpeed(AttackSpeed);
+        AutoAttack.SetDamage(AttackDamage);
         
-        InitializeIndicators();
+        //InitializeIndicators();
     }
 
     void Update()
     {
-        if (InRange())
-        {
+        if (InDetectionRange())
             DestinationSetter.target = Target;
-        }
+        if (InAttackRange())
+            AutoAttack.SetTarget(Target);
+        else if (!InAttackRange())
+            AutoAttack.ClearTarget();
     }
 
     public void TakeDamage(float damage)
     {
+        DestinationSetter.target = Target;
         CurrentHealth -= damage;
         HealthBar.SetHealth(CurrentHealth);
 
@@ -47,9 +58,10 @@ public class Enemy : MonoBehaviour
             KillEnemy();
         }
     }
-
+    
     private void KillEnemy()
     {
+        OnEnemyKilled?.Invoke();
         Destroy(transform.parent.gameObject);
     }
 
@@ -67,9 +79,15 @@ public class Enemy : MonoBehaviour
         //DetectionRangeIndicator.gameObject.SetActive(false);
     }
     
-    private bool InRange()
+    private bool InDetectionRange()
     {
         if (Vector3.Distance(transform.position, Target.position) <= DetectionRange) return true;
+        return false;
+    }
+    
+    private bool InAttackRange()
+    {
+        if (Vector3.Distance(transform.position, Target.position) <= AttackRange) return true;
         return false;
     }
 
