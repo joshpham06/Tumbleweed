@@ -9,7 +9,6 @@ public class AimIndicator : MonoBehaviour
     void Awake()
     {
         transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y * Range, transform.localScale.z);
-        Show();
     }
 
     void Update()

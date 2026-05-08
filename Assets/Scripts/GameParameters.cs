@@ -12,10 +12,14 @@ public static class GameParameters
     public static float PlayerAttackDamage = 5f;
     public static float PlayerMaxHealth = 100f;
     
-    // Projectiles
-    public static float ProjectileSpeed = 8f;
+    //Burst
+    public static float BurstDamage = 10f;
+    public static float BurstCooldown = 3f;
     
     // Split
     public static int SplitAmount = 4;
     public static float SplitCooldown = 10f;
+    
+    // Projectiles
+    public static float ProjectileSpeed = 8f;
 }

@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour, IsDamageable
         AutoAttack.SetAttackSpeed(AttackSpeed);
         AutoAttack.SetDamage(AttackDamage);
         
-        InitializeIndicators();
+        //InitializeIndicators();
     }
 
     void Update()

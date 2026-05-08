@@ -7,26 +7,14 @@ public class Burst : MonoBehaviour
     public GameObject ProjectilePrefab;
     public AimIndicator AimIndicator;
 
-    public float Damage = 10f;
-
-    private GameObject Projectile;
+    private float CooldownTimer;
     
     void Update()
     {
-        if (Projectile == null)
-            return;
-        Projectile.transform.position += Projectile.transform.forward * GameParameters.ProjectileSpeed * Time.deltaTime;
+        if (CooldownTimer > 0f)
+            CooldownTimer -= Time.deltaTime;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.GetComponentInParent<IsDamageable>().TakeDamage(Damage);
-            Destroy(gameObject);
-        }
-    }
-
+    
     public void OnBurst(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -35,7 +23,11 @@ public class Burst : MonoBehaviour
         if (context.canceled)
         {
             AimIndicator.Hide();
-            Fire();
+            if (CooldownTimer <= 0f)
+            {
+                Fire();
+                CooldownTimer = GameParameters.BurstCooldown;
+            }
         }
     }
 
@@ -46,6 +38,6 @@ public class Burst : MonoBehaviour
 
         if (direction == Vector3.zero) return;
 
-        Projectile = Instantiate(ProjectilePrefab, transform.position, Quaternion.LookRotation(direction));
+        Instantiate(ProjectilePrefab, transform.position, Quaternion.LookRotation(direction));
     }
 }
