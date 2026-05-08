@@ -10,16 +10,15 @@ public class ClickToMove : MonoBehaviour
     public AIPath AIPath;
     public LayerMask GroundLayer;
     public LayerMask EnemyLayer;
-
+    public Transform PlayerDestination;
+    public Transform SelectedEnemy;
+    
     private float Timer;
     private bool IsHolding;
-    private Transform PlayerDestination;
-    private Transform SelectedEnemy;
     private Rigidbody Rigidbody;
 
     void Awake()
     {
-        PlayerDestination = new GameObject("MoveTarget").transform;
         PlayerDestination.position = transform.position;
         DestinationSetter.target = PlayerDestination;
         AIPath.maxSpeed = GameParameters.PlayerSpeed;
@@ -39,14 +38,15 @@ public class ClickToMove : MonoBehaviour
         {
             if (InEnemyRange())
             {
-                PlayerDestination.position = transform.position; // stop
                 AutoAttack.SetTarget(SelectedEnemy);
+                if (!KeyboardToMove.IsMoving)
+                    PlayerDestination.position = transform.position;
             }
             else
             {
                 AutoAttack.ClearTarget();
-                if (!IsHolding)
-                    PlayerDestination.position = SelectedEnemy.position; // chase if enemy walked away
+                if (!IsHolding && !KeyboardToMove.IsMoving)
+                    PlayerDestination.position = SelectedEnemy.position;
             }
         }
 
@@ -58,6 +58,16 @@ public class ClickToMove : MonoBehaviour
             Timer = GameParameters.UpdateInterval;
             TryMove();
         }
+    }
+    
+    public void ClearSelectedEnemy()
+    {
+        if (SelectedEnemy != null)
+        {
+            SelectedEnemy.GetComponent<Enemy>().UnhighlightEnemy();
+            SelectedEnemy = null;
+        }
+        AutoAttack.ClearTarget();
     }
 
     public void OnPointClick(InputAction.CallbackContext context)
@@ -71,6 +81,12 @@ public class ClickToMove : MonoBehaviour
 
         if (context.canceled)
             IsHolding = false;
+    }
+    
+    public bool InEnemyRange()
+    {
+        if (Vector3.Distance(transform.position, SelectedEnemy.position) <= GameParameters.PlayerAttackRange) return true;
+        return false;
     }
 
     private void TryMove()
@@ -107,11 +123,5 @@ public class ClickToMove : MonoBehaviour
             PlayerDestination.position = hit.point;
             AutoAttack.ClearTarget();
         }
-    }
-
-    private bool InEnemyRange()
-    {
-        if (Vector3.Distance(transform.position, SelectedEnemy.position) <= GameParameters.PlayerAttackRange) return true;
-        return false;
     }
 }
