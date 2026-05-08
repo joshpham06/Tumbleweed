@@ -17,7 +17,7 @@ public class AimIndicator : MonoBehaviour
         direction.y = 0f;
 
         Vector3 midPoint = Player.position + direction * (Range * 0.5f);
-        transform.position = new Vector3(midPoint.x, 0.01f, midPoint.z);
+        transform.position = new Vector3(midPoint.x, transform.position.y, midPoint.z);
     
         transform.rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
     }

@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="02fb0b63-e0c0-4748-8d8d-1cd06aa6a5fd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tumbleweed/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Burst.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Movement/ClickToMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/MousePosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/MousePosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Synty/PolygonWestern/Materials/Alts/PolygonWestern_01_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Synty/PolygonWestern/Materials/Alts/PolygonWestern_01_A.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +37,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Prefabs/EnemyProjectile.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Roll-a-ball.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/IsDamageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement/RangeIndicator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -146,7 +143,7 @@
       <workItem from="1776891647590" duration="3464000" />
       <workItem from="1776895454662" duration="21428000" />
       <workItem from="1777906798242" duration="12422000" />
-      <workItem from="1778060508662" duration="13300000" />
+      <workItem from="1778060508662" duration="14204000" />
     </task>
     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
       <option name="closed" value="true" />
@@ -244,7 +241,23 @@
       <option name="project" value="LOCAL" />
       <updated>1778224330997</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added player projectile model">
+      <option name="closed" value="true" />
+      <created>1778225796040</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1778225796040</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removed projectile wiggle">
+      <option name="closed" value="true" />
+      <created>1778225905768</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1778225905768</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,7 +303,9 @@
     <MESSAGE value="Health bar positioning" />
     <MESSAGE value="Fixed enemy damage and stopping distance" />
     <MESSAGE value="Burst ability fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Burst ability fixes" />
+    <MESSAGE value="Added player projectile model" />
+    <MESSAGE value="Removed projectile wiggle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed projectile wiggle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
