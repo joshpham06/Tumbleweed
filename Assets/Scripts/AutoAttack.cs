@@ -7,6 +7,7 @@ public class AutoAttack : MonoBehaviour
     private Transform Target;
     private float Timer;
     private float AttackSpeed;
+    private float AttackDamage;
 
     void Awake()
     {
@@ -24,6 +25,11 @@ public class AutoAttack : MonoBehaviour
             Timer = AttackSpeed;
             SpawnProjectile();
         }
+    }
+
+    public void SetDamage(float damage)
+    {
+        AttackDamage = damage;
     }
 
     public void SetAttackSpeed(float attackSpeed)
@@ -52,6 +58,6 @@ public class AutoAttack : MonoBehaviour
         if (direction == Vector3.zero) return;
 
         GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.LookRotation(direction));
-        proj.GetComponent<Projectile>().Initialize(Target);
+        proj.GetComponent<Projectile>().Initialize(Target, AttackDamage);
     }
 }

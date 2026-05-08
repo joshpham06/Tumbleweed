@@ -3,13 +3,15 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Transform Target;
-    
+
+    private float AttackDamage;
     private float RotateSpeed = 500f;
     private float Radius = 0.5f;
 
-    public void Initialize(Transform target)
+    public void Initialize(Transform target,  float damage)
     {
         Target = target;
+        AttackDamage = damage;
     }
 
     void Update()
@@ -29,8 +31,7 @@ public class Projectile : MonoBehaviour
 
         if (Vector3.Distance(transform.position, Target.position) <= Radius)
         {
-            print("Distance:  " + Vector3.Distance(transform.position, Target.position) + "   |   Radius: " + Radius);
-            Target.GetComponentInParent<IsDamageable>().TakeDamage(GameParameters.ProjectileDamage);
+            Target.GetComponentInParent<IsDamageable>().TakeDamage(AttackDamage);
             Destroy(gameObject);
         }
     }

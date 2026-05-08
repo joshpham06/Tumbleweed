@@ -13,6 +13,7 @@ public class ClickToMove : MonoBehaviour
     private bool IsHolding;
     private Transform PlayerDestination;
     private Transform SelectedEnemy;
+    private Rigidbody Rigidbody;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class ClickToMove : MonoBehaviour
         DestinationSetter.target = PlayerDestination;
         AIPath.maxSpeed = GameParameters.PlayerSpeed;
         AutoAttack.SetAttackSpeed(GameParameters.PlayerAttackSpeed);
+        AutoAttack.SetDamage(GameParameters.PlayerAttackDamage);
     }
 
     void OnDestroy()

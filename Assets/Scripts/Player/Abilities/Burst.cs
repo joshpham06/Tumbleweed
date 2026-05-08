@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,6 +6,26 @@ public class Burst : MonoBehaviour
 {
     public GameObject ProjectilePrefab;
     public AimIndicator AimIndicator;
+
+    public float Damage = 10f;
+
+    private GameObject Projectile;
+    
+    void Update()
+    {
+        if (Projectile == null)
+            return;
+        Projectile.transform.position += Projectile.transform.forward * GameParameters.ProjectileSpeed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.GetComponentInParent<IsDamageable>().TakeDamage(Damage);
+            Destroy(gameObject);
+        }
+    }
 
     public void OnBurst(InputAction.CallbackContext context)
     {
@@ -25,6 +46,6 @@ public class Burst : MonoBehaviour
 
         if (direction == Vector3.zero) return;
 
-        GameObject proj = Instantiate(ProjectilePrefab, transform.position, Quaternion.LookRotation(direction));
+        Projectile = Instantiate(ProjectilePrefab, transform.position, Quaternion.LookRotation(direction));
     }
 }

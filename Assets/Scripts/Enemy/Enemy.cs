@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour, IsDamageable
     public RangeIndicator DetectionRangeIndicator;
     public AutoAttack AutoAttack;
     
-    public int Damage;
+    public float AttackDamage;
     public float AttackRange = 2f;
     public float AttackSpeed = 1f;
     public float Speed = 2.5f; 
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour, IsDamageable
         HealthBar.Initialize(MaxHealth);
         AIPath.maxSpeed = Speed;
         AutoAttack.SetAttackSpeed(AttackSpeed);
+        AutoAttack.SetDamage(AttackDamage);
         
         InitializeIndicators();
     }
@@ -54,7 +55,6 @@ public class Enemy : MonoBehaviour, IsDamageable
         }
     }
 
-    // might not need separate method doing nothing else when the enemy is killed
     private void KillEnemy()
     {
         Destroy(transform.parent.gameObject);
