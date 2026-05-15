@@ -8,6 +8,7 @@ public class AutoAttack : MonoBehaviour
     private float Timer;
     private float AttackSpeed;
     private float AttackDamage;
+    public bool IsPlayerAttack;
 
     void Awake()
     {

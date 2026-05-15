@@ -11,6 +11,7 @@ public static class GameParameters
     public static float PlayerAttackSpeed = 1f;
     public static float PlayerAttackDamage = 5f;
     public static float PlayerMaxHealth = 100f;
+    public static float PlayerLifestealMultiplier = 0.5f;
     
     //Burst
     public static float BurstDamage = 10f;

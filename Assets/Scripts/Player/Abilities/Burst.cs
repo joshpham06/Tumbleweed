@@ -6,6 +6,7 @@ public class Burst : MonoBehaviour
 {
     public GameObject ProjectilePrefab;
     public AimIndicator AimIndicator;
+    public AbilityCooldown AbilityCooldown;
 
     private float CooldownTimer;
     
@@ -26,6 +27,7 @@ public class Burst : MonoBehaviour
             if (CooldownTimer <= 0f)
             {
                 Fire();
+                AbilityCooldown.StartCooldown(GameParameters.BurstCooldown);
                 CooldownTimer = GameParameters.BurstCooldown;
             }
         }

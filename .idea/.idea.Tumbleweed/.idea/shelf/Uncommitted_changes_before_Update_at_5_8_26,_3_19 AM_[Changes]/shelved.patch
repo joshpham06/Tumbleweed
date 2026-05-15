@@ -6,8 +6,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 diff --git a/.idea/.idea.Tumbleweed/.idea/workspace.xml b/.idea/.idea.Tumbleweed/.idea/workspace.xml
---- a/.idea/.idea.Tumbleweed/.idea/workspace.xml	(revision d1267d4c79cf27aa85b9d3e1cfd25cc1adf51bbd)
-+++ b/.idea/.idea.Tumbleweed/.idea/workspace.xml	(date 1777616959677)
+--- a/.idea/.idea.Tumbleweed/.idea/workspace.xml	(revision 986e5fe1e830bb8e8a3a2bbf49ead6eceb2495ae)
++++ b/.idea/.idea.Tumbleweed/.idea/workspace.xml	(date 1778235566423)
 @@ -4,12 +4,7 @@
      <option name="autoReloadType" value="SELECTIVE" />
    </component>
@@ -22,39 +22,28 @@ diff --git a/.idea/.idea.Tumbleweed/.idea/workspace.xml b/.idea/.idea.Tumbleweed
      <option name="SHOW_DIALOG" value="false" />
      <option name="HIGHLIGHT_CONFLICTS" value="true" />
      <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-@@ -47,21 +42,21 @@
-     <option name="hideEmptyMiddlePackages" value="true" />
-     <option name="showLibraryContents" value="true" />
+@@ -33,6 +28,8 @@
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/Assets/InputSystem.inputsettings.asset" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement/RangeIndicator.cs" root0="FORCE_HIGHLIGHTING" />
++    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/ProjectSettings/GraphicsSettings.asset" root0="SKIP_HIGHLIGHTING" />
++    <setting file="mock:///Users/joshuapham/Documents/Unity Projects/Tumbleweed/ProjectSettings/GraphicsSettings.asset" root0="SKIP_HIGHLIGHTING" />
    </component>
--  <component name="PropertiesComponent">{
--  &quot;keyToString&quot;: {
--    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
--    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
--    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+   <component name="KubernetesApiPersistence">{}</component>
+   <component name="KubernetesApiProvider">{
+@@ -52,7 +49,6 @@
+     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
 -    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
--    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
--    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
--    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
--    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
--    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
--    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
--    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-+  <component name="PropertiesComponent"><![CDATA[{
-+  "keyToString": {
-+    "ModuleVcsDetector.initialDetectionPerformed": "true",
-+    "RunOnceActivity.ShowReadmeOnStart": "true",
-+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-+    "git-widget-placeholder": "EnemyBehavior",
-+    "node.js.detected.package.eslint": "true",
-+    "node.js.detected.package.tslint": "true",
-+    "node.js.selected.package.eslint": "(autodetect)",
-+    "node.js.selected.package.tslint": "(autodetect)",
-+    "nodejs_package_manager_path": "npm",
-+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-+    "vue.rearranger.settings.migration": "true"
-   }
--}</component>
-+}]]></component>
-   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
-     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-       <option name="EXE_PATH" value="/Applications/Unity/Unity-6000.3.9f1/Unity.app/Contents/MacOS/Unity" />
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+@@ -128,6 +124,7 @@
+       <updated>1776891645955</updated>
+       <workItem from="1776891647590" duration="3464000" />
+       <workItem from="1776895454662" duration="21428000" />
++      <workItem from="1778235515938" duration="49000" />
+     </task>
+     <task id="LOCAL-00001" summary="Enemy healthbar and damage.">
+       <option name="closed" value="true" />

@@ -16,9 +16,10 @@ public class AimIndicator : MonoBehaviour
         Vector3 direction = (MousePosition.WorldPosition - Player.position).normalized;
         direction.y = 0f;
 
+        if (direction == Vector3.zero) return;
+
         Vector3 midPoint = Player.position + direction * (Range * 0.5f);
         transform.position = new Vector3(midPoint.x, transform.position.y, midPoint.z);
-    
         transform.rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
     }
 

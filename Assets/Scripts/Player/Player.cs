@@ -5,17 +5,24 @@ public class Player : MonoBehaviour, IsDamageable
 {
 	public RangeIndicator RangeIndicator;
 	public HealthBar HealthBar;
+	public GameObject FloatingTextPrefab;
+
 	
 	private GameController GameController;
 	private float CurrentHealth;
 	
+	public static Player Instance { get; private set; }
+	
 	void Awake()
 	{
+		Instance = this;
 		GameController = GetComponentInParent<GameController>();
 		RangeIndicator.Initialize(GameParameters.PlayerAttackRange);
 		HealthBar.Initialize(GameParameters.PlayerMaxHealth);
-		
 		CurrentHealth = GameParameters.PlayerMaxHealth;
+		
+		GameObject obj = Instantiate(FloatingTextPrefab, transform.position, Quaternion.identity);
+		obj.GetComponent<FloatingText>().Initialize("", Color.green);
 	}
 	
 	void OnTriggerEnter(Collider other) 
@@ -25,6 +32,18 @@ public class Player : MonoBehaviour, IsDamageable
 			other.gameObject.SetActive(false);
 			GameController.OnPickUpCollectible();
 		}
+	}
+	
+	public void Heal(float amount)
+	{
+		CurrentHealth = Mathf.Min(CurrentHealth + amount, GameParameters.PlayerMaxHealth);
+		HealthBar.SetHealth(CurrentHealth);
+    
+		Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
+		spawnPos.y = transform.position.y + 1f;
+    
+		GameObject obj = Instantiate(FloatingTextPrefab, spawnPos, Quaternion.identity);
+		obj.GetComponent<FloatingText>().Initialize("+" + amount, Color.green);
 	}
 	
 	public void TakeDamage(float damage)

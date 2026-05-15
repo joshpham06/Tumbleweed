@@ -52,6 +52,7 @@ public class Enemy : MonoBehaviour, IsDamageable
         DestinationSetter.target = Target;
         CurrentHealth -= damage;
         HealthBar.SetHealth(CurrentHealth);
+        Player.Instance.Heal(damage * GameParameters.PlayerLifestealMultiplier);
 
         if (CurrentHealth <= 0)
         {
